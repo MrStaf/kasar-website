@@ -1,0 +1,46 @@
+#links-main {
+  background: rgb(31, 23, 45);
+  background: linear-gradient(0deg, rgba(31, 23, 45, 1) 0%, rgba(27, 17, 43, 1) 100%);
+}
+
+#links-main main section a div svg path {
+  stroke: black;
+}
+
+#links-main main section a:hover svg path {
+  stroke: #6516c9;
+}
+
+#links-main main section a:hover {
+  background: rgba(122, 26, 243, 0.1);
+  color: #6516c9;
+}
+
+.svg {
+  margin-right: 2rem;
+  width: 22px;
+  height: 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#links-main main section a {
+  display: flex;
+  text-decoration: none;
+  color: #000;
+  font-size: 18px;
+  display: flex;
+  align-items: center;
+  margin: 1rem 0.5rem;
+  padding: 0.5rem 1rem;
+  border-radius: 14px;
+}
+
+#links-main main section {
+  margin-top: 60px;
+  background-color: #fff;
+  width: 100%;
+  padding: 0 0.5rem;
+  border-radius: 2px;
+}
