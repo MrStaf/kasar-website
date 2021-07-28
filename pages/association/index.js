@@ -5,7 +5,7 @@ export default function Events() {
   return (
     <div>
       <Head>
-        <title>.l'association</title>
+        <title>.l&#39;association</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
