@@ -13,13 +13,13 @@ export default function Events() {
       </Head>
       <main className="flex flex-col items-center h-full text-white">
         <Image src={logo} width="200px" height="200px" />
-        <div class="title text-5xl font-bold font-logo">
+        <div className="text-5xl font-bold title font-logo">
           KASAR <span className="font-logo-light text-primary">LINKS</span>
         </div>
-        <div class="font-body text-lg">Excepteur culpa amet.</div>
+        <div className="text-lg font-body">Excepteur culpa amet.</div>
         <section className="font-body">
           <a href="https://github.com" target="_blank">
-            <div class="svg">
+            <div className="svg">
               <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M15 22V18.13C15.0375 17.6532 14.9731 17.1738 14.811 16.7238C14.6489 16.2738 14.3929 15.8634 14.06 15.52C17.2 15.17 20.5 13.98 20.5 8.52C20.4997 7.12383 19.9627 5.7812 19 4.77C19.4559 3.54851 19.4236 2.19835 18.91 1C18.91 1 17.73 0.650001 15 2.48C12.708 1.85882 10.292 1.85882 8 2.48C5.27 0.650001 4.09 1 4.09 1C3.57638 2.19835 3.54414 3.54851 4 4.77C3.03013 5.7887 2.49252 7.14346 2.5 8.55C2.5 13.97 5.8 15.16 8.94 15.55C8.611 15.89 8.35726 16.2954 8.19531 16.7399C8.03335 17.1844 7.96681 17.6581 8 18.13V22M8 19C3 20.5 3 16.5 1 16L8 19Z"
@@ -34,7 +34,7 @@ export default function Events() {
           </a>
           <Link href="/events">
             <a>
-              <div class="svg">
+              <div className="svg">
                 <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M17 3H3C1.89543 3 1 3.89543 1 5V19C1 20.1046 1.89543 21 3 21H17C18.1046 21 19 20.1046 19 19V5C19 3.89543 18.1046 3 17 3Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M14 1V5" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -47,7 +47,7 @@ export default function Events() {
           </Link>
           <Link href="/">
             <a>
-              <div class="svg">
+              <div className="svg">
                 <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path d="M11 21C16.5228 21 21 16.5228 21 11C21 5.47715 16.5228 1 11 1C5.47715 1 1 5.47715 1 11C1 16.5228 5.47715 21 11 21Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   <path d="M15.24 6.76L13.12 13.12L6.76 15.24L8.88 8.88L15.24 6.76Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -57,7 +57,7 @@ export default function Events() {
             </a>
           </Link>
           <a href="https://github.com" target="_blank">
-            <div class="svg">
+            <div className="svg">
               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14 10V6M19 1H1V17H6V21L10 17H15L19 13V1ZM9 10V6V10Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
@@ -66,7 +66,7 @@ export default function Events() {
           </a>
           <Link href="/podcast">
             <a>
-              <div class="svg">
+              <div className="svg">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                   <path
                     d="M1 16V10C1 7.61305 1.94821 5.32387 3.63604 3.63604C5.32387 1.94821 7.61305 1 10 1C12.3869 1 14.6761 1.94821 16.364 3.63604C18.0518 5.32387 19 7.61305 19 10V16"
@@ -88,7 +88,7 @@ export default function Events() {
             </a>
           </Link>
           <a href="https://www.instagram.com/kasar.ai/" target="_blank">
-            <div class="svg">
+            <div className="svg">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 1H6C3.23858 1 1 3.23858 1 6V16C1 18.7614 3.23858 21 6 21H16C18.7614 21 21 18.7614 21 16V6C21 3.23858 18.7614 1 16 1Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path
@@ -104,7 +104,7 @@ export default function Events() {
             <div>instagram</div>
           </a>
           <a href="https://www.facebook.com/kasar.ai.eceparis" target="_blank">
-            <div class="svg">
+            <div className="svg">
               <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M12 1H9C7.67392 1 6.40215 1.52678 5.46447 2.46447C4.52678 3.40215 4 4.67392 4 6V9H1V13H4V21H8V13H11L12 9H8V6C8 5.73478 8.10536 5.48043 8.29289 5.29289C8.48043 5.10536 8.73478 5 9 5H12V1Z"
