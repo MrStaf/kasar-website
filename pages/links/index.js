@@ -18,7 +18,7 @@ export default function Events() {
         </div>
         <div className="text-lg font-body">Excepteur culpa amet.</div>
         <section className="font-body">
-          <a href="https://github.com" target="_blank">
+          <a href="https://github.com" target="_blank" rel="noreferrer">
             <div className="svg">
               <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -56,7 +56,7 @@ export default function Events() {
               <div>web-site</div>
             </a>
           </Link>
-          <a href="https://github.com" target="_blank">
+          <a href="https://github.com" target="_blank" rel="noreferrer">
             <div className="svg">
               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14 10V6M19 1H1V17H6V21L10 17H15L19 13V1ZM9 10V6V10Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -87,7 +87,7 @@ export default function Events() {
               <div>podcast</div>
             </a>
           </Link>
-          <a href="https://www.instagram.com/kasar.ai/" target="_blank">
+          <a href="https://www.instagram.com/kasar.ai/" target="_blank" rel="noreferrer">
             <div className="svg">
               <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M16 1H6C3.23858 1 1 3.23858 1 6V16C1 18.7614 3.23858 21 6 21H16C18.7614 21 21 18.7614 21 16V6C21 3.23858 18.7614 1 16 1Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -103,7 +103,7 @@ export default function Events() {
             </div>
             <div>instagram</div>
           </a>
-          <a href="https://www.facebook.com/kasar.ai.eceparis" target="_blank">
+          <a href="https://www.facebook.com/kasar.ai.eceparis" target="_blank" rel="noreferrer">
             <div className="svg">
               <svg width="13" height="22" viewBox="0 0 13 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
