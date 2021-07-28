@@ -33,7 +33,7 @@ export default function Header() {
           <div className={`${path === "nous_rejoindre" ? "text-tertiary" : ""} cursor-pointer select-none`}>.nous_rejoindre</div>
         </Link>
         <Link href="/association">
-          <div className={`${path === "association" ? "text-tertiary" : ""} cursor-pointer select-none`}>.l&#39;association</div>
+          <div className={`${path === "association" ? "text-tertiary" : ""} cursor-pointer select-none`}>.l-association</div>
         </Link>
       </div>
     </header>
