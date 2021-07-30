@@ -12,11 +12,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <Header />
-      <main className="font-body">
-        <h1 className="font-logo">
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
+      <main className="flex flex-col items-center flex-grow overflow-y-scroll font-body">
+        <h1 className="flex flex-col items-end">
+          <span className="text-4xl font-logo-light">Bienvenue à</span>
+          <span className="text-6xl font-logo text-primary">Kasar</span>
         </h1>
-        qsdfqsdfqsdf
       </main>
 
       <Footer />

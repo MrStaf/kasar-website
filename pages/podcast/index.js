@@ -18,7 +18,7 @@ export default function Events() {
           <Line title="A la découverte de la NLP" ep="S0 E1" />
           <Line title="A la découverte de la NLP" ep="S0 E2" />
           <Line title="A la découverte de la NLP" ep="S0 E3" />
-          <p className="w-full text-6xl text-center text-white">...</p>
+          <p className="w-full text-6xl text-center text-white animate-pulse">...</p>
         </Section>
       </main>
 

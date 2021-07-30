@@ -47,12 +47,14 @@ export default function Events() {
             </div>
           </div>
           <p className="italic font-bold">ou</p>
-          <input type="email" placeholder="Écrit ton mail..." className="px-2 py-2 rounded-md text-bg focus:outline-none" />
-          <div className="flex items-center justify-center px-12 py-2 mb-16 bg-white rounded-md cursor-pointer">
-            <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M33 3L16.5 19.5" stroke="#7A1AF3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-              <path d="M33 3L22.5 33L16.5 19.5L3 13.5L33 3Z" stroke="#7A1AF3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
+          <div>
+            <input autoComplete="email" type="email" placeholder="Écrit ton mail..." className="px-2 py-2 rounded-md text-bg focus:outline-none" />
+            <div className="flex items-center justify-center px-12 py-2 mt-8 mb-16 bg-white rounded-md cursor-pointer hover:bg-ligth">
+              <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M33 3L16.5 19.5" stroke="#7A1AF3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+                <path d="M33 3L22.5 33L16.5 19.5L3 13.5L33 3Z" stroke="#7A1AF3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+              </svg>
+            </div>
           </div>
         </Section>
       </main>
