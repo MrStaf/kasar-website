@@ -11,7 +11,7 @@ export default function Events() {
       <main className="flex flex-col items-center flex-grow overflow-y-scroll font-body">
         <div className="w-full px-8 max-w-7xl">
           <Title>HACKATHONS</Title>
-          <div className="grid grid-cols-3 gap-10">
+          <div className="flex flex-wrap items-center justify-center gap-10">
             <Card title="Premier Hackathon" subtitle="20/10/2021" id={1} />
             <Card title="Deuxième Hackathon" subtitle="09/01/2022" id={2} />
             <Card title="Semaine de l'IA" subtitle="07-10/02/2022" id={3} />

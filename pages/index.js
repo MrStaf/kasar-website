@@ -1,5 +1,4 @@
 // librairies
-import Head from "next/head";
 import Parser from "rss-parser";
 import { useRouter } from "next/router";
 import { useState, useEffect } from "react";
@@ -23,6 +22,12 @@ export default function App(podcasts) {
   const isTabPodcast = tab === "podcast";
   const isTabNousRejoindre = tab === "nous_rejoindre";
   const isTabAssociation = tab === "association";
+  const is404 = isTabHome || isTabEvents || isTabPodcast || isTabNousRejoindre || isTabAssociation;
+  useEffect(() => {
+    if (!is404) {
+      router.push("404");
+    }
+  }, []);
 
   const [active, setActive] = useState();
   return (

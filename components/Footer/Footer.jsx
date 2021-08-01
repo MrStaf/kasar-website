@@ -139,8 +139,8 @@ export default function Footer({ podcasts, active, setActive }) {
     setCurrentTime(progressBar.current.value);
   };
   return (
-    <footer className="bottom-0 flex items-center justify-between flex-grow-0 flex-shrink-0 w-full px-4 text-sm text-white bg-bg font-text">
-      {!active && <div className="text-lg font-text">Écoutez le dernier podcast</div>}
+    <footer className="bottom-0 flex items-center justify-between flex-grow-0 flex-shrink-0 w-full px-1 py-1 overflow-hidden text-sm text-white sm:px-4 bg-bg font-text sm:py-0">
+      {!active && <div className="text-sm sm:text-lg font-text">Écoutez le dernier podcast</div>}
       <div className="flex items-center">
         <div className={`relative flex items-center justify-center w-12 h-12 rounded-lg cursor-pointer ${active ? "" : "order-1 ml-4"}`}>
           <Image
@@ -171,7 +171,7 @@ export default function Footer({ podcasts, active, setActive }) {
             <path d="M5 19V5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
         )}
-        <div className={`${active ? "" : "ml-8"} flex items-center justify-center w-12 h-12 mx-2 rounded-full bg-ligth`} onClick={togglePlayPause}>
+        <div className={`${active ? "" : "ml-1 sm:ml-8"} flex items-center justify-center w-12 h-12 sm:mx-2 rounded-full bg-ligth`} onClick={togglePlayPause}>
           {!isPlaying ? (
             <svg className="cursor-pointer" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.8335 3.5L22.1668 14L5.8335 24.5V3.5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -197,8 +197,8 @@ export default function Footer({ podcasts, active, setActive }) {
         </div>
         <p className="cursor-default select-none">{duration ? calculateTime(duration) : ""}</p>
       </div>
-      <div className="flex flex-grow-0 ml-8 cursor-pointer w-28">
-        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <div className="flex-grow-0 hidden ml-1 cursor-pointer md:ml-8 w-28 sm:flex">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
           <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M15.54 8.46002C16.4774 9.39766 17.004 10.6692 17.004 11.995C17.004 13.3208 16.4774 14.5924 15.54 15.53" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
         </svg>

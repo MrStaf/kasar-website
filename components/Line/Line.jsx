@@ -23,8 +23,8 @@ export default function Line({ title, ep, active, img, setActive, id }) {
         <div className="relative flex items-center justify-center w-16 h-16 bg-clip-border rounded-2xl">
           <Image src={img} layout="fill" alt={"Picture of " + title} objectFit="contain" placeholder="blur" blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`} className="rounded-2xl" />
         </div>
-        <h1 className="flex flex-col justify-center ml-4">
-          {title}
+        <h1 className="flex flex-col justify-center flex-grow-0 flex-shrink pr-4 ml-4">
+          <span className="overflow-clip">{title}</span>
           <div className="flex items-center">
             <p className="mr-2">{ep}</p>
             <svg className="cursor-pointer" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
