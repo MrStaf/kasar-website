@@ -1,16 +1,14 @@
-import { Header } from "./../../components/Header/index";
-import { Title } from "./../../components/Title/index";
-import { Card, Text } from "./../../components/Card/index";
+import { Title } from "../../components/Title/index";
+import { Card, Text } from "../../components/Card/index";
 import Head from "next/head";
 
-export default function Events() {
+export default function Association() {
   return (
-    <div>
+    <>
       <Head>
         <title>.l&#39;association</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <main className="flex flex-col items-center flex-grow overflow-y-scroll font-text">
         <div className="w-full px-8 max-w-7xl">
           <Title>nos objectifs</Title>
@@ -63,8 +61,6 @@ export default function Events() {
           </div>
         </div>
       </main>
-
-      <footer></footer>
-    </div>
+    </>
   );
 }

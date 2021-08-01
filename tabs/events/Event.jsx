@@ -1,5 +1,3 @@
-import { Header } from "./../../components/Header/index";
-import { Footer } from "./../../components/Footer/index";
 import { Title } from "./../../components/Title/index";
 import { Card } from "./../../components/Card/index";
 import Head from "next/head";
@@ -10,7 +8,6 @@ export default function Events() {
       <Head>
         <title> .events </title> <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <main className="flex flex-col items-center flex-grow overflow-y-scroll font-body">
         <div className="w-full px-8 max-w-7xl">
           <Title>HACKATHONS</Title>
@@ -28,7 +25,6 @@ export default function Events() {
           </div>
         </div>
       </main>
-      <Footer fixed={false} />
     </>
   );
 }

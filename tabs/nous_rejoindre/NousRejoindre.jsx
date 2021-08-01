@@ -3,14 +3,13 @@ import { Section } from "./../../components/Section/index";
 import { Footer } from "./../../components/Footer/index";
 import Head from "next/head";
 
-export default function Events() {
+export default function NousRejoindre() {
   return (
     <>
       <Head>
         <title>.nous_rejoindre</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Header />
       <main className="flex flex-col items-center flex-grow text-2xl text-white font-text">
         <Section className="justify-around">
           <p className="w-full text-6xl font-bold text-center font-logo-light">Rejoins-nous !</p>
@@ -21,7 +20,7 @@ export default function Events() {
                 <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M22 6L12 13L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <a className="italic font-bold" href="mailto:join@kasar.fr">
+              <a className="italic font-bold" href="mailto:join@kasar.fr?subject=Je souhaite rejoindre kasar !">
                 join@kasar.fr
               </a>
             </div>
@@ -48,7 +47,7 @@ export default function Events() {
           </div>
           <p className="italic font-bold">ou</p>
           <div>
-            <input autoComplete="email" type="email" placeholder="Écrit ton mail..." className="px-2 py-2 rounded-md text-bg focus:outline-none" />
+            <input autoComplete="email" type="email" placeholder="Écrit ton mail..." className="px-3 py-2 rounded-md text-bg focus:outline-none" />
             <div className="flex items-center justify-center px-12 py-2 mt-8 mb-16 bg-white rounded-md cursor-pointer hover:bg-ligth">
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M33 3L16.5 19.5" stroke="#7A1AF3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -58,7 +57,6 @@ export default function Events() {
           </div>
         </Section>
       </main>
-      <Footer fixed={false} />
     </>
   );
 }

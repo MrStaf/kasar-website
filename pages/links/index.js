@@ -1,4 +1,4 @@
-import { Header } from "./../../components/Header/index";
+import { Header } from "../../components/Header/index";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";

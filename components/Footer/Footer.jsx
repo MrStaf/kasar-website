@@ -1,13 +1,32 @@
 import { useRef, useState, useEffect } from "react";
-import { getData } from "../../functions";
+import Image from "next/image";
 
-export default function Footer({ fixed = true }, podcasts) {
-  const fix = fixed ? "fixed " : "";
+const shimmer = (w, h) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#333" offset="20%" />
+      <stop stop-color="#222" offset="50%" />
+      <stop stop-color="#333" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#333" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str) => (typeof window === "undefined" ? Buffer.from(str).toString("base64") : window.btoa(str));
+
+export default function Footer({ podcasts, active, setActive }) {
+  const [item, setItem] = useState([]);
+  const [index, setIndex] = useState(null);
+
   // Refs
   const audioPlayer = useRef(null);
   const progressBar = useRef(null);
   const volumeBar = useRef(null);
   const animationRef = useRef(null);
+  const sourceRef = useRef(null);
 
   // States
   const [isPlaying, setIsPlaying] = useState(false);
@@ -17,6 +36,34 @@ export default function Footer({ fixed = true }, podcasts) {
 
   // Effects
   useEffect(() => {
+    if (active === undefined) {
+      setItem([podcasts?.podcasts?.items[podcasts?.podcasts?.items?.length - 1]]);
+    } else {
+      setItem(
+        podcasts.podcasts.items.filter((itm, index) => {
+          if (itm.guid === active) {
+            setIndex(index);
+            return itm;
+          }
+        }),
+      );
+      let url = podcasts.podcasts.items.filter((itm) => {
+        if (itm.guid === active) {
+          return itm;
+        }
+      })[0]?.enclosure?.url;
+      if (url !== undefined) {
+        sourceRef.current.src = url;
+        if (isPlaying) {
+          togglePlayPause();
+        }
+        setCurrentTime(0);
+        audioPlayer.current.load();
+      }
+    }
+  }, [active]);
+
+  useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
     setDuration(seconds);
     progressBar.current.max = seconds;
@@ -25,15 +72,42 @@ export default function Footer({ fixed = true }, podcasts) {
   }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
 
   // Functions
+  const previousSound = () => {
+    if (active) {
+      console.log(podcasts?.podcasts?.items[(index - 1) % podcasts?.podcasts?.items?.length]);
+      setActive(podcasts?.podcasts?.items[(index - 1) % podcasts?.podcasts?.items?.length]?.guid);
+    }
+  };
+
+  const nextSound = () => {
+    if (active) {
+      setActive(podcasts?.podcasts?.items[(index + 1) % podcasts?.podcasts?.items?.length]?.guid);
+    }
+  };
+
   const togglePlayPause = () => {
-    const prevValue = isPlaying;
-    setIsPlaying(!prevValue);
-    if (!prevValue) {
-      audioPlayer.current.play();
-      animationRef.current = requestAnimationFrame(whilePlaying);
+    if (!active) {
+      setActive(item[0].guid);
+
+      const prevValue = isPlaying;
+      setIsPlaying(!prevValue);
+      if (!prevValue) {
+        audioPlayer.current.play();
+        animationRef.current = requestAnimationFrame(whilePlaying);
+      } else {
+        audioPlayer.current.pause();
+        cancelAnimationFrame(animationRef.current);
+      }
     } else {
-      audioPlayer.current.pause();
-      cancelAnimationFrame(animationRef.current);
+      const prevValue = isPlaying;
+      setIsPlaying(!prevValue);
+      if (!prevValue) {
+        audioPlayer.current.play();
+        animationRef.current = requestAnimationFrame(whilePlaying);
+      } else {
+        audioPlayer.current.pause();
+        cancelAnimationFrame(animationRef.current);
+      }
     }
   };
 
@@ -64,29 +138,40 @@ export default function Footer({ fixed = true }, podcasts) {
     progressBar.current.style.setProperty("--seek-before-width", `${(progressBar.current.value / duration) * 100}%`);
     setCurrentTime(progressBar.current.value);
   };
-
   return (
-    <footer className={fix + "bottom-0 flex items-center flex-shrink-0 justify-between flex-grow-0 w-full px-4 text-sm text-white bg-bg font-text"}>
+    <footer className="bottom-0 flex items-center justify-between flex-grow-0 flex-shrink-0 w-full px-4 text-sm text-white bg-bg font-text">
+      {!active && <div className="text-lg font-text">Écoutez le dernier podcast</div>}
       <div className="flex items-center">
-        <div className="flex items-center justify-center w-16 h-12 bg-white rounded-lg cursor-pointer">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M19 3H5C3.89543 3 3 3.89543 3 5V19C3 20.1046 3.89543 21 5 21H19C20.1046 21 21 20.1046 21 19V5C21 3.89543 20.1046 3 19 3Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M8.5 10C9.32843 10 10 9.32843 10 8.5C10 7.67157 9.32843 7 8.5 7C7.67157 7 7 7.67157 7 8.5C7 9.32843 7.67157 10 8.5 10Z" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            <path d="M21 15L16 10L5 21" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          </svg>
+        <div className={`relative flex items-center justify-center w-12 h-12 rounded-lg cursor-pointer ${active ? "" : "order-1 ml-4"}`}>
+          <Image
+            src={item[0]?.itunes?.image ? item[0]?.itunes?.image : `data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+            layout="fill"
+            alt={"Picture of " + item[0]?.title}
+            objectFit="contain"
+            placeholder="blur"
+            blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
+            className="rounded-lg"
+          />
         </div>
-        <div className="mx-4 truncate select-none w-28">
-          <p>À la découver...</p>
-          <p>S0 E3</p>
+        <div className={`${active ? "" : "order-1"} mx-4 truncate select-none w-28`}>
+          <p>{item[0]?.title}</p>
+          <p>{item[0]?.season !== undefined && `S${item[0]?.season} E${item[0]?.episode}`}</p>
         </div>
-        <audio ref={audioPlayer}>
-          <source src="http://localhost:8000/podcast/orelsan-san.mp3" preload="metadata" onLoad={console.log}></source>
+        <audio
+          ref={audioPlayer}
+          onEnded={() => {
+            nextSound();
+            togglePlayPause();
+          }}>
+          <source ref={sourceRef} preload="metadata"></source>
         </audio>
-        <svg className="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M19 20L9 12L19 4V20Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M5 19V5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
-        <div className="flex items-center justify-center w-12 h-12 mx-2 rounded-full bg-ligth" onClick={togglePlayPause}>
+        {active && (
+          <svg className="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={previousSound}>
+            <path d="M19 20L9 12L19 4V20Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M5 19V5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        )}
+        <div className={`${active ? "" : "ml-8"} flex items-center justify-center w-12 h-12 mx-2 rounded-full bg-ligth`} onClick={togglePlayPause}>
           {!isPlaying ? (
             <svg className="cursor-pointer" width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
               <path d="M5.8335 3.5L22.1668 14L5.8335 24.5V3.5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
@@ -98,12 +183,14 @@ export default function Footer({ fixed = true }, podcasts) {
             </svg>
           )}
         </div>
-        <svg className="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M5 4L15 12L5 20V4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-          <path d="M19 5V19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-        </svg>
+        {active && (
+          <svg className="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={nextSound}>
+            <path d="M5 4L15 12L5 20V4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+            <path d="M19 5V19" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+          </svg>
+        )}
       </div>
-      <div className="flex flex-grow max-w-3xl mx-4 cursor-pointer">
+      <div className={`${!active ? "hidden" : ""} flex flex-grow max-w-3xl mx-4 cursor-pointer`}>
         <p className="cursor-default select-none">{calculateTime(currentTime)}</p>
         <div className="relative flex items-center flex-grow mx-2">
           <input type="range" ref={progressBar} onChange={changeRange} className="w-full h-2" />

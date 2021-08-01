@@ -8,8 +8,8 @@ function Error({ statusCode }) {
     <>
       <Header />
       <div className="flex items-center justify-center flex-grow">
-        <div className="w-1/2 mr-12 h-1/2">
-          <Image src={Nothing} layout="responsive" />
+        <div className="relative w-1/2 mr-12 h-1/2">
+          <Image src={Nothing} layout="fill" objectFit="contain" />
         </div>
         <div className="flex flex-col">
           <p className="mb-4 text-4xl">{statusCode ? `Error ${statusCode}` : "An error occurred on client"}</p>
@@ -20,7 +20,7 @@ function Error({ statusCode }) {
           </p>
         </div>
       </div>
-      <Footer />
+      <Footer fixed={false} />
     </>
   );
 }
