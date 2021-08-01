@@ -1,6 +1,7 @@
 import { useRef, useState, useEffect } from "react";
+import { getData } from "../../functions";
 
-export default function Footer({ fixed = true }) {
+export default function Footer({ fixed = true }, podcasts) {
   const fix = fixed ? "fixed " : "";
   // Refs
   const audioPlayer = useRef(null);
@@ -10,13 +11,11 @@ export default function Footer({ fixed = true }) {
 
   // States
   const [isPlaying, setIsPlaying] = useState(false);
-  const [isLoading, setIsLoading] = useState(false);
   const [duration, setDuration] = useState(0);
   const [currentTime, setCurrentTime] = useState(0);
   const [volume, setVolume] = useState(100);
 
   // Effects
-
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
     setDuration(seconds);
@@ -109,7 +108,7 @@ export default function Footer({ fixed = true }) {
         <div className="relative flex items-center flex-grow mx-2">
           <input type="range" ref={progressBar} onChange={changeRange} className="w-full h-2" />
         </div>
-        <p className="cursor-default select-none">{duration && !isNaN(duration) && calculateTime(duration)}</p>
+        <p className="cursor-default select-none">{duration ? calculateTime(duration) : ""}</p>
       </div>
       <div className="flex flex-grow-0 ml-8 cursor-pointer w-28">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">

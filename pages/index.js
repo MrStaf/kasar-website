@@ -2,8 +2,14 @@ import Head from "next/head";
 import Image from "next/image";
 import { Header } from "./../components/Header/index";
 import { Footer } from "./../components/Footer/index";
+import Parser from "rss-parser";
 
-export default function Home() {
+export default function Home(podcasts) {
+  podcasts = podcasts.podcasts;
+  console.log(podcasts);
+  podcasts?.items?.forEach((item) => {
+    console.log(item.title + ":" + item.link);
+  });
   return (
     <>
       <Head>
@@ -23,3 +29,15 @@ export default function Home() {
     </>
   );
 }
+
+export const getServerSideProps = async (ctx) => {
+  const parser = new Parser();
+  const podcasts = await parser.parseURL("http://136.243.117.30:8000/").then((data) => {
+    return data === undefined ? null : data;
+  });
+  return {
+    props: {
+      podcasts: { ...podcasts },
+    },
+  };
+};
