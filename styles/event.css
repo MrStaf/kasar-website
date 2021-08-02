@@ -1,0 +1,36 @@
+#description h1 {
+  font-size: 2rem;
+  line-height: 3rem;
+  margin-bottom: 3rem;
+}
+#description h2 {
+  font-size: 1.8rem;
+  line-height: 2.5rem;
+  margin-bottom: 2rem;
+}
+#description h3 {
+  font-size: 1.5rem;
+  line-height: 2rem;
+  margin-bottom: 1.5rem;
+}
+
+#description ol {
+  list-style: decimal inside;
+}
+
+#description ul {
+  list-style: url("../public/list.svg") inside;
+}
+
+#description video {
+  width: 100%;
+}
+
+#description img {
+  width: 100%;
+}
+
+#description p {
+  margin-top: 1rem;
+  margin-bottom: 1.75rem;
+}

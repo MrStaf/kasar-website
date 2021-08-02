@@ -12,7 +12,7 @@ export default function Association() {
       <main className="flex flex-col items-center flex-grow overflow-y-scroll font-text">
         <div className="w-full px-8 max-w-7xl">
           <Title>nos objectifs</Title>
-          <div className="grid grid-cols-2 gap-10">
+          <div className="grid grid-cols-1 gap-10 text-justify sm:grid-cols-2">
             <div>
               L’association <span className="font-bold text-primary">Kasar</span> est avant tout un défi que nous avons décidé de relever. Pour nous, réussir c’est respecter plusieurs points cruciaux autant vis-à-vis de nos membres que de tous ceux qui
               côtoient l’association. Nous avons conscience d’avoir une grande responsabilité : aider les élèves à s’épanouir. Ainsi nous devons être à la hauteur de nos évènements, car Kasar est avant tout une association d’évènementiel. Ce sera donc à
@@ -33,7 +33,7 @@ export default function Association() {
         </div>
         <div className="w-full px-8 max-w-7xl">
           <Title>présentation du bureau</Title>
-          <div className="grid grid-cols-3 gap-10">
+          <div className="grid items-center grid-cols-1 gap-10 text-justify sm:grid-cols-3">
             <Card title="Grégoire Pateyron" subtitle="Président" />
             <div className="w-full col-span-2">
               Je m’appelle Grégoire Pateyron, j’ai 20 ans, je suis originaire de Paris et je me présente à vous en tant que président de cette association qui a commencé à se développer l’année dernière. J’habite proche de l’ECE, ce qui peut être un atout
@@ -45,6 +45,7 @@ export default function Association() {
               découvrir assez rapidement les domaines d’informatique présents au sein de l’école. Au début, c’est ici que j’ai pu découvrir de nombreux langages informatiques que je n’avais pas eu l’occasion de voir en classe préparatoire. J’ai appris que
               l’intelligence artificielle était présente tout autour de nous, ce que je n’imaginais pas avant.
             </div>
+            <Card title="Benoît Fage" subtitle="Vice-Président" className="flex sm:hidden" />
             <div className="w-full col-span-2">
               Je m’appelle Benoît Fage, j’ai 21 ans et suis actuellement en ING3 nouveaux. J’aime créer toute sorte de projet, autant virtuel (applications, sites web, scripts etc.) que matériel (bricolage, objets connectés etc.). Cette soif de curiosité
               envers le fonctionnement des objets technologiques et virtuels me permet de comprendre la manière dont ils sont créés, et pourquoi.
@@ -57,7 +58,7 @@ export default function Association() {
               En tant que Secrétaire Général, mon rôle sera d’épauler Grégoire dans l’entretien de Kasar. Je m’assurerai des tâches techniques pour préparer les différents hackathons, et aussi de faire grandir l’association avec des idées qui vont vous
               être présentées par la suite.
             </div>
-            <Card title="Benoît Fage" subtitle="Vice-Président" />
+            <Card title="Benoît Fage" subtitle="Vice-Président" className="hidden sm:flex" />
           </div>
         </div>
       </main>

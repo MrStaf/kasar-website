@@ -4,7 +4,7 @@ export const getData = async (url = "") => {
     mode: "cors",
     cache: "no-cache",
     headers: {
-      Origin: "localhost",
+      "Content-Type": "application/json",
     },
     redirect: "follow",
     referrerPolicy: "no-referrer",

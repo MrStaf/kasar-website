@@ -46,7 +46,7 @@ export default function Line({ title, ep, active, img, setActive, id }) {
           className={`${active === id ? "bg-white" : ""} flex items-center justify-center w-16 h-16 border rounded-full`}
           onClick={() => {
             setActive(id);
-            console.log(id);
+            // console.log(id);
           }}>
           <svg className={`${active === id ? "stroke-black" : "stroke-white"} cursor-pointer`} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M5.8335 3.5L22.1668 14L5.8335 24.5V3.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

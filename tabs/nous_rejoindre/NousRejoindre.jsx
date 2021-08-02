@@ -1,9 +1,46 @@
-import { Header } from "./../../components/Header/index";
-import { Section } from "./../../components/Section/index";
-import { Footer } from "./../../components/Footer/index";
+// Librairies
+import { useState, useRef } from "react";
+import { useAlert } from "react-alert";
 import Head from "next/head";
 
+// Components
+import { Section } from "./../../components/Section/index";
+
+const API_URL = "https://content.benoit.fage.fr/items/";
+
 export default function NousRejoindre() {
+  const alert = useAlert();
+  const [email, setEmail] = useState("");
+
+  function validateEmail(email) {
+    const re = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return re.test(String(email).toLowerCase());
+  }
+
+  const sendMail = async () => {
+    if (validateEmail(email)) {
+      let headersList = {
+        Accept: "*/*",
+        "Content-Type": "application/json",
+      };
+      fetch(API_URL + "join_kasar", {
+        method: "POST",
+        body: `{\n  "email": "${email}"\n}`,
+        headers: headersList,
+      })
+        .then(function (response) {
+          return response.text();
+        })
+        .then(function (data) {
+          // console.log(data);
+          alert.success("Envoie réussi !");
+        });
+      setEmail("");
+    } else {
+      alert.error("Email incorrect");
+    }
+  };
+
   return (
     <>
       <Head>
@@ -14,14 +51,14 @@ export default function NousRejoindre() {
         <Section className="justify-around">
           <p className="w-full text-6xl font-bold text-center font-logo-light">Rejoins-nous !</p>
           <div>
-            <p>Envoie un mail à</p>
+            <p className="text-center">Envoie un mail à</p>
             <div className="flex items-center py-1 pr-3 mt-2 border-2 rounded-lg">
               <svg className="mx-3" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M22 6L12 13L2 6" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
               </svg>
-              <a className="italic font-bold" href="mailto:join@kasar.fr?subject=Je souhaite rejoindre kasar !">
-                join@kasar.fr
+              <a className="italic font-bold" href="mailto:join@kasar.app?subject=Je souhaite rejoindre kasar !">
+                join@kasar.app
               </a>
             </div>
           </div>
@@ -47,8 +84,8 @@ export default function NousRejoindre() {
           </div>
           <p className="italic font-bold">ou</p>
           <div>
-            <input autoComplete="email" type="email" placeholder="Écrit ton mail..." className="px-3 py-2 rounded-md text-bg focus:outline-none" />
-            <div className="flex items-center justify-center px-12 py-2 mt-8 mb-16 bg-white rounded-md cursor-pointer hover:bg-ligth">
+            <input autoComplete="email" type="email" placeholder="Écrit ton mail..." className="px-3 py-2 rounded-md text-bg focus:outline-none" onChange={(e) => setEmail(e.target.value)} value={email} />
+            <div className="flex items-center justify-center px-12 py-2 mt-8 mb-8 bg-white rounded-md cursor-pointer sm:mb-16 hover:bg-ligth" onClick={sendMail}>
               <svg width="36" height="36" viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M33 3L16.5 19.5" stroke="#7A1AF3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                 <path d="M33 3L22.5 33L16.5 19.5L3 13.5L33 3Z" stroke="#7A1AF3" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />

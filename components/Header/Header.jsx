@@ -41,19 +41,19 @@ export default function Header() {
           setHamburger(!hamburger);
         }}>
         <Link href={{ pathname: "/", query: { tab: "events" } }}>
-          <div className={`${path === "events" ? "text-tertiary" : ""} cursor-pointer select-none`}>.events</div>
+          <div className={`${path === "events" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.events</div>
         </Link>
         <Link href={{ pathname: "/", query: { tab: "podcast" } }}>
-          <div className={`${path === "podcast" ? "text-tertiary" : ""} cursor-pointer select-none`}>.podcast</div>
+          <div className={`${path === "podcast" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.podcast</div>
         </Link>
         <Link href="links">
-          <div className="cursor-pointer select-none">.liens</div>
+          <div className="w-full text-center cursor-pointer select-none">.liens</div>
         </Link>
         <Link href={{ pathname: "/", query: { tab: "nous_rejoindre" } }}>
-          <div className={`${path === "nous_rejoindre" ? "text-tertiary" : ""} cursor-pointer select-none`}>.nous_rejoindre</div>
+          <div className={`${path === "nous_rejoindre" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.nous_rejoindre</div>
         </Link>
         <Link href={{ pathname: "/", query: { tab: "association" } }}>
-          <div className={`${path === "association" ? "text-tertiary" : ""} cursor-pointer select-none`}>.l&#39;association</div>
+          <div className={`${path === "association" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.l&#39;association</div>
         </Link>
       </div>
       {/* Nav links */}

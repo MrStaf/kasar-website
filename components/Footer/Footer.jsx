@@ -37,17 +37,17 @@ export default function Footer({ podcasts, active, setActive }) {
   // Effects
   useEffect(() => {
     if (active === undefined) {
-      setItem([podcasts?.podcasts?.items[podcasts?.podcasts?.items?.length - 1]]);
+      setItem([podcasts?.items[podcasts?.items?.length - 1]]);
     } else {
       setItem(
-        podcasts.podcasts.items.filter((itm, index) => {
+        podcasts.items.filter((itm, index) => {
           if (itm.guid === active) {
             setIndex(index);
             return itm;
           }
         }),
       );
-      let url = podcasts.podcasts.items.filter((itm) => {
+      let url = podcasts.items.filter((itm) => {
         if (itm.guid === active) {
           return itm;
         }
@@ -74,14 +74,14 @@ export default function Footer({ podcasts, active, setActive }) {
   // Functions
   const previousSound = () => {
     if (active) {
-      console.log(podcasts?.podcasts?.items[(index - 1) % podcasts?.podcasts?.items?.length]);
-      setActive(podcasts?.podcasts?.items[(index - 1) % podcasts?.podcasts?.items?.length]?.guid);
+      // console.log(podcasts?.items[(index - 1) % podcasts?.items?.length]);
+      setActive(podcasts?.items[(index - 1) % podcasts?.items?.length]?.guid);
     }
   };
 
   const nextSound = () => {
     if (active) {
-      setActive(podcasts?.podcasts?.items[(index + 1) % podcasts?.podcasts?.items?.length]?.guid);
+      setActive(podcasts?.items[(index + 1) % podcasts?.items?.length]?.guid);
     }
   };
 
@@ -142,7 +142,7 @@ export default function Footer({ podcasts, active, setActive }) {
     <footer className="bottom-0 flex items-center justify-between flex-grow-0 flex-shrink-0 w-full px-1 py-1 overflow-hidden text-sm text-white sm:px-4 bg-bg font-text sm:py-0">
       {!active && <div className="text-sm sm:text-lg font-text">Écoutez le dernier podcast</div>}
       <div className="flex items-center">
-        <div className={`relative flex items-center justify-center w-12 h-12 rounded-lg cursor-pointer ${active ? "" : "order-1 ml-4"}`}>
+        <div className={`relative hidden md:flex items-center justify-center w-12 h-12 rounded-lg cursor-pointer ${active ? "" : "order-1 ml-4"}`}>
           <Image
             src={item[0]?.itunes?.image ? item[0]?.itunes?.image : `data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`}
             layout="fill"
@@ -166,7 +166,7 @@ export default function Footer({ podcasts, active, setActive }) {
           <source ref={sourceRef} preload="metadata"></source>
         </audio>
         {active && (
-          <svg className="cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={previousSound}>
+          <svg className="hidden cursor-pointer md:block" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" onClick={previousSound}>
             <path d="M19 20L9 12L19 4V20Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             <path d="M5 19V5" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
@@ -195,9 +195,9 @@ export default function Footer({ podcasts, active, setActive }) {
         <div className="relative flex items-center flex-grow mx-2">
           <input type="range" ref={progressBar} onChange={changeRange} className="w-full h-2" />
         </div>
-        <p className="cursor-default select-none">{duration ? calculateTime(duration) : ""}</p>
+        <p className="hidden cursor-default select-none md:block">{duration ? calculateTime(duration) : ""}</p>
       </div>
-      <div className="flex-grow-0 hidden ml-1 cursor-pointer md:ml-8 w-28 sm:flex">
+      <div className="flex-grow-0 hidden ml-1 cursor-pointer md:ml-8 w-28 md:flex">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" className="flex-shrink-0">
           <path d="M11 5L6 9H2V15H6L11 19V5Z" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           <path d="M15.54 8.46002C16.4774 9.39766 17.004 10.6692 17.004 11.995C17.004 13.3208 16.4774 14.5924 15.54 15.53" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
