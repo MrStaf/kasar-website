@@ -7,8 +7,8 @@ import { useState, useEffect } from "react";
 import { getData } from "../functions";
 
 // Components
-import { Header } from "./../components/Header/index";
-import { Footer } from "./../components/Footer/index";
+import { Header } from "./../components/Header/";
+import { Footer } from "./../components/Footer/";
 
 // Tabs
 import { Home } from "../tabs/home";
@@ -43,6 +43,7 @@ export default function App({ events_list, podcasts }) {
   }, []);
 
   const [active, setActive] = useState();
+
   return (
     <>
       <Header />
