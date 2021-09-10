@@ -1,10 +1,30 @@
-export default function Line({ title, ep, active = false }) {
+import Image from "next/image";
+
+const shimmer = (w, h) => `
+<svg width="${w}" height="${h}" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient id="g">
+      <stop stop-color="#333" offset="20%" />
+      <stop stop-color="#222" offset="50%" />
+      <stop stop-color="#333" offset="70%" />
+    </linearGradient>
+  </defs>
+  <rect width="${w}" height="${h}" fill="#333" />
+  <rect id="r" width="${w}" height="${h}" fill="url(#g)" />
+  <animate xlink:href="#r" attributeName="x" from="-${w}" to="${w}" dur="1s" repeatCount="indefinite"  />
+</svg>`;
+
+const toBase64 = (str) => (typeof window === "undefined" ? Buffer.from(str).toString("base64") : window.btoa(str));
+
+export default function Line({ title, ep, active, img, setActive, id }) {
   return (
-    <div className={`${active ? "bg-bg-light" : "bg-bg"} flex items-center justify-between w-full px-5 py-3 my-1 text-sm text-white font-text bg-bg rounded-2xl`}>
+    <div className={`${active === id ? "bg-bg-light" : "bg-bg"} flex items-center justify-between w-full px-5 py-3 my-1 text-sm text-white font-text bg-bg rounded-2xl`}>
       <div className="flex">
-        <div className="w-16 h-16 bg-ligth rounded-2xl"></div>
-        <h1 className="flex flex-col justify-center ml-4">
-          {title}
+        <div className="relative flex items-center justify-center w-16 h-16 bg-clip-border rounded-2xl">
+          <Image src={img} layout="fill" alt={"Picture of " + title} objectFit="contain" placeholder="blur" blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(700, 475))}`} className="rounded-2xl" />
+        </div>
+        <h1 className="flex flex-col justify-center flex-grow-0 flex-shrink pr-4 ml-4">
+          <span className="overflow-clip">{title}</span>
           <div className="flex items-center">
             <p className="mr-2">{ep}</p>
             <svg className="cursor-pointer" width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -22,21 +42,15 @@ export default function Line({ title, ep, active = false }) {
         </h1>
       </div>
       <div className="flex">
-        <div className="flex items-center h-16 border rounded-full">
-          <svg className="ml-6 mr-4 cursor-pointer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <path
-              d="M20.8401 4.60999C20.3294 4.099 19.7229 3.69364 19.0555 3.41708C18.388 3.14052 17.6726 2.99817 16.9501 2.99817C16.2276 2.99817 15.5122 3.14052 14.8448 3.41708C14.1773 3.69364 13.5709 4.099 13.0601 4.60999L12.0001 5.66999L10.9401 4.60999C9.90843 3.5783 8.50915 2.9987 7.05012 2.9987C5.59109 2.9987 4.19181 3.5783 3.16012 4.60999C2.12843 5.64169 1.54883 7.04096 1.54883 8.49999C1.54883 9.95903 2.12843 11.3583 3.16012 12.39L4.22012 13.45L12.0001 21.23L19.7801 13.45L20.8401 12.39C21.3511 11.8792 21.7565 11.2728 22.033 10.6053C22.3096 9.93789 22.4519 9.22248 22.4519 8.49999C22.4519 7.77751 22.3096 7.0621 22.033 6.39464C21.7565 5.72718 21.3511 5.12075 20.8401 4.60999V4.60999Z"
-              stroke="white"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
+        <div
+          className={`${active === id ? "bg-white" : ""} flex items-center justify-center w-16 h-16 border rounded-full`}
+          onClick={() => {
+            setActive(id);
+            // console.log(id);
+          }}>
+          <svg className={`${active === id ? "stroke-black" : "stroke-white"} cursor-pointer`} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path d="M5.8335 3.5L22.1668 14L5.8335 24.5V3.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
           </svg>
-          <div className={`${active ? "bg-white" : ""} flex items-center justify-center w-16 h-16 border rounded-full`}>
-            <svg className={`${active ? "stroke-black" : "stroke-white"} cursor-pointer`} width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <path d="M5.8335 3.5L22.1668 14L5.8335 24.5V3.5Z" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-            </svg>
-          </div>
         </div>
       </div>
     </div>

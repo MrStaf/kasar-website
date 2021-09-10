@@ -17,6 +17,7 @@ module.exports = {
       tertiary: "#B073FF",
       white: "#ffffff",
       ligth: "rgb(255 255 255 / 25%)",
+      transparent: "rgb(0 0 0 / 0%)",
     },
     stroke: {
       black: "#000000",

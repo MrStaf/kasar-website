@@ -72,6 +72,14 @@ input[type="range"]::-webkit-slider-thumb {
   background: #7a1af3;
 }
 
+/* Mozilla */
+/* width & color */
+* {
+  scrollbar-color: #9a55f2 #fff;
+  scrollbar-width: thin;
+}
+
+
 /* Fonts */
 @font-face {
   font-family: "Space Mono";
