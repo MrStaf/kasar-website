@@ -64,7 +64,7 @@ export const getServerSideProps = async (ctx) => {
       item: ["season", "episode"],
     },
   });
-  const podcasts = await parser.parseURL("http://136.243.117.30:8000/").then((data) => {
+  const podcasts = await parser.parseURL("https://podcast.kasar.fun/").then((data) => {
     return data === undefined ? null : data;
   });
   const events = await getData(API_URL + "kasar_events?sort=date")
