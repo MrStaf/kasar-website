@@ -34,3 +34,9 @@ yarn-error.log*
 .vercel
 
 BUILD.MD
+
+# vscode
+/.vscode
+
+# backup
+website-main.zip
