@@ -15,7 +15,7 @@ export default function Events() {
         <div className="text-5xl font-bold title font-logo">
           KASAR <span className="font-logo-light text-primary">LINKS</span>
         </div>
-        <div className="text-lg font-body">Association évènementielle d&amp;IA.</div>
+        <div className="text-lg font-body">Association évènementielle d&apos;IA.</div>
         <section className="font-body">
           <a href="https://github.com/kasar-ia" target="_blank" rel="noreferrer">
             <div className="svg">
@@ -31,7 +31,7 @@ export default function Events() {
             </div>
             <div>github</div>
           </a>
-          <Link href="/events">
+          <Link href="/?tab=events">
             <a>
               <div className="svg">
                 <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -63,7 +63,7 @@ export default function Events() {
             </div>
             <div>twitch</div>
           </a>
-          <Link href="/podcast">
+          <Link href="/?tab=podcast">
             <a>
               <div className="svg">
                 <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
