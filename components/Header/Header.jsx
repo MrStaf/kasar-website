@@ -13,7 +13,7 @@ export default function Header() {
       <div className="flex">
         <Link href="/">
           <a className="flex items-center w-12 h-12">
-            <Image src={logo} width="50px" height="50px" />
+            <Image alt="kasar logo" src={logo} width="50px" height="50px" />
           </a>
         </Link>
         <Link href="/">
@@ -47,38 +47,38 @@ export default function Header() {
         onClick={() => {
           setHamburger(!hamburger);
         }}>
-        <Link href={{ pathname: "/", query: { tab: "events" } }}>
-          <div className={`${path === "events" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.events</div>
+        <Link passHref href={{ pathname: "/", query: { tab: "events" } }}>
+          <a className={`${path === "events" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.events</a>
         </Link>
-        <Link href={{ pathname: "/", query: { tab: "podcast" } }}>
-          <div className={`${path === "podcast" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.podcast</div>
+        <Link passHref href={{ pathname: "/", query: { tab: "podcast" } }}>
+          <a className={`${path === "podcast" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.podcast</a>
         </Link>
-        <Link href="links">
-          <div className="w-full text-center cursor-pointer select-none">.liens</div>
+        <Link passHref href="links">
+          <a className="w-full text-center cursor-pointer select-none">.liens</a>
         </Link>
-        <Link href={{ pathname: "/", query: { tab: "nous_rejoindre" } }}>
-          <div className={`${path === "nous_rejoindre" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.nous_rejoindre</div>
+        <Link passHref href={{ pathname: "/", query: { tab: "nous_rejoindre" } }}>
+          <a className={`${path === "nous_rejoindre" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.nous_rejoindre</a>
         </Link>
-        <Link href={{ pathname: "/", query: { tab: "association" } }}>
-          <div className={`${path === "association" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.l&#39;association</div>
+        <Link passHref href={{ pathname: "/", query: { tab: "association" } }}>
+          <a className={`${path === "association" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.l&#39;association</a>
         </Link>
       </div>
       {/* Nav links */}
       <div className="justify-between hidden w-full mx-8 md:flex">
-        <Link href={{ pathname: "/", query: { tab: "events" } }}>
-          <div className={`${path === "events" ? "text-tertiary" : ""} cursor-pointer select-none`}>.events</div>
+        <Link passHref href={{ pathname: "/", query: { tab: "events" } }}>
+          <a className={`${path === "events" ? "text-tertiary" : ""} cursor-pointer select-none`}>.events</a>
         </Link>
-        <Link href={{ pathname: "/", query: { tab: "podcast" } }}>
-          <div className={`${path === "podcast" ? "text-tertiary" : ""} cursor-pointer select-none`}>.podcast</div>
+        <Link passHref href={{ pathname: "/", query: { tab: "podcast" } }}>
+          <a className={`${path === "podcast" ? "text-tertiary" : ""} cursor-pointer select-none`}>.podcast</a>
         </Link>
-        <Link href="links">
-          <div className="cursor-pointer select-none">.liens</div>
+        <Link passHref href="links">
+          <a className="cursor-pointer select-none">.liens</a>
         </Link>
-        <Link href={{ pathname: "/", query: { tab: "nous_rejoindre" } }}>
-          <div className={`${path === "nous_rejoindre" ? "text-tertiary" : ""} cursor-pointer select-none`}>.nous_rejoindre</div>
+        <Link passHref href={{ pathname: "/", query: { tab: "nous_rejoindre" } }}>
+          <a className={`${path === "nous_rejoindre" ? "text-tertiary" : ""} cursor-pointer select-none`}>.nous_rejoindre</a>
         </Link>
-        <Link href={{ pathname: "/", query: { tab: "association" } }}>
-          <div className={`${path === "association" ? "text-tertiary" : ""} cursor-pointer select-none`}>.l&#39;association</div>
+        <Link passHref href={{ pathname: "/", query: { tab: "association" } }}>
+          <a className={`${path === "association" ? "text-tertiary" : ""} cursor-pointer select-none`}>.l&#39;association</a>
         </Link>
       </div>
     </header>

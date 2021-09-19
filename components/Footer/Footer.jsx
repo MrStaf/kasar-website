@@ -63,7 +63,8 @@ export default function Footer({ podcasts, active, setActive }) {
         audioPlayer.current.load();
       }
     }
-  }, [active]);
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [active, isPlaying, podcasts.items]);
 
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
@@ -71,7 +72,7 @@ export default function Footer({ podcasts, active, setActive }) {
     progressBar.current.max = seconds;
     progressBar.current.value = 0;
     volumeBar.current.value = volume;
-  }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState]);
+  }, [audioPlayer?.current?.loadedmetadata, audioPlayer?.current?.readyState, volume]);
 
   // Functions
   const previousSound = () => {

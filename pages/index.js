@@ -40,7 +40,7 @@ export default function App({ events_list, podcasts }) {
     if (is404) {
       router.push("404");
     }
-  }, []);
+  }, [is404, router]);
 
   const [active, setActive] = useState();
 
