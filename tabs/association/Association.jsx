@@ -16,7 +16,7 @@ export default function Association() {
           </Title>
           <p className="flex gap-2">
             <svg width="25" height="25" viewBox="0 0 25 25" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <g clip-path="url(#clip0)">
+              <g clipPath="url(#clip0)">
                 <path
                   d="M21.6521 10.7008C21.6521 17.7008 12.6521 23.7008 12.6521 23.7008C12.6521 23.7008 3.6521 17.7008 3.6521 10.7008C3.6521 8.31383 4.60031 6.02464 6.28814 4.33681C7.97597 2.64899 10.2652 1.70078 12.6521 1.70078C15.039 1.70078 17.3282 2.64899 19.0161 4.33681C20.7039 6.02464 21.6521 8.31383 21.6521 10.7008Z"
                   stroke="black"
@@ -50,7 +50,7 @@ export default function Association() {
                 strokeLinecap="round"
                 strokeLinejoin="round"
               />
-              <path d="M22.6521 6.70078L12.6521 13.7008L2.6521 6.70078" stroke="black" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+              <path d="M22.6521 6.70078L12.6521 13.7008L2.6521 6.70078" stroke="black" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
             </svg>
             contact@kasar.app
           </p>
@@ -58,7 +58,7 @@ export default function Association() {
           <p className="flex gap-2">Tous droits de reproduction réservés - © KASARAI</p>
           <p className="flex gap-2">
             Fait avec 💜 par{" "}
-            <a href="https://benoit.fage.fr" target="_blank" className="text-primary">
+            <a href="https://benoit.fage.fr" rel="noreferrer" target="_blank" className="text-primary">
               Benoît Fage
             </a>
           </p>
