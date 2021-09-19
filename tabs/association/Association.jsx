@@ -1,6 +1,10 @@
-import { Title } from "../../components/Title/index";
-import { Card, Text } from "../../components/Card/index";
+// Libraries
 import Head from "next/head";
+
+// Components
+import { Title } from "../../components/Title/";
+import { Card } from "../../components/Card/";
+
 
 export default function Association() {
   return (
