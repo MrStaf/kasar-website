@@ -12,6 +12,7 @@
   font-size: 1.5rem;
   line-height: 2rem;
   margin-bottom: 1.5rem;
+  font-weight: bold;
 }
 
 #description ol {
@@ -20,6 +21,10 @@
 
 #description ul {
   list-style: url("../public/list.svg") inside;
+}
+
+#description ul p {
+  display: inline;
 }
 
 #description video {
