@@ -1,4 +1,3 @@
-import { Header } from "../../components/Header/index";
 import Head from "next/head";
 import Image from "next/image";
 import Link from "next/link";
@@ -12,13 +11,13 @@ export default function Events() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex flex-col items-center h-full text-white">
-        <Image src={logo} width="200px" height="200px" />
+        <Image src={logo} width="200px" height="200px" alt="logo kasar"/>
         <div className="text-5xl font-bold title font-logo">
           KASAR <span className="font-logo-light text-primary">LINKS</span>
         </div>
-        <div className="text-lg font-body">Excepteur culpa amet.</div>
+        <div className="text-lg font-body">Association évènementielle d&amp;IA.</div>
         <section className="font-body">
-          <a href="https://github.com" target="_blank" rel="noreferrer">
+          <a href="https://github.com/kasar-ia" target="_blank" rel="noreferrer">
             <div className="svg">
               <svg width="22" height="23" viewBox="0 0 22 23" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path
@@ -56,7 +55,7 @@ export default function Events() {
               <div>web-site</div>
             </a>
           </Link>
-          <a href="https://github.com" target="_blank" rel="noreferrer">
+          <a href="https://www.twitch.tv/kasarlab" target="_blank" rel="noreferrer">
             <div className="svg">
               <svg width="20" height="22" viewBox="0 0 20 22" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M14 10V6M19 1H1V17H6V21L10 17H15L19 13V1ZM9 10V6V10Z" stroke="#000000" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
