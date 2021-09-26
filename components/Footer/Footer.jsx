@@ -64,7 +64,7 @@ export default function Footer({ podcasts, active, setActive }) {
       }
     }
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [active, isPlaying, podcasts.items]);
+  }, [active, isPlaying, podcasts?.items]);
 
   useEffect(() => {
     const seconds = Math.floor(audioPlayer.current.duration);
