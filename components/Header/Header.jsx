@@ -53,7 +53,7 @@ export default function Header() {
         <Link passHref href={{ pathname: "/", query: { tab: "podcast" } }}>
           <a className={`${path === "podcast" ? "text-tertiary" : ""} cursor-pointer select-none w-full text-center`}>.podcast</a>
         </Link>
-        <Link passHref href="links">
+        <Link passHref href="/links">
           <a className="w-full text-center cursor-pointer select-none">.liens</a>
         </Link>
         <Link passHref href={{ pathname: "/", query: { tab: "nous_rejoindre" } }}>
@@ -71,7 +71,7 @@ export default function Header() {
         <Link passHref href={{ pathname: "/", query: { tab: "podcast" } }}>
           <a className={`${path === "podcast" ? "text-tertiary" : ""} cursor-pointer select-none`}>.podcast</a>
         </Link>
-        <Link passHref href="links">
+        <Link passHref href="/links">
           <a className="cursor-pointer select-none">.liens</a>
         </Link>
         <Link passHref href={{ pathname: "/", query: { tab: "nous_rejoindre" } }}>
