@@ -64,12 +64,12 @@ export const getServerSideProps = async (ctx) => {
       item: ["season", "episode"],
     },
   });
-  const podcasts = await parser.parseURL("https://podcast.kasar.fun/").then((data) => {
-    return data === undefined ? null : data;
-  });
+  // const podcasts = await parser.parseURL("https://podcast.kasar.fun/").then((data) => {
+  //   return data === undefined ? null : data;
+  // });
   const events = await getData(API_URL + "kasar_events?sort=date")
     .then((data) => {
-      // console.log(data.data);
+      console.log(data.data);
       return data.data;
     })
     .catch((err) => {
@@ -77,7 +77,7 @@ export const getServerSideProps = async (ctx) => {
     });
   return {
     props: {
-      podcasts: podcasts,
+      podcasts: [],
       events_list: events,
     },
   };

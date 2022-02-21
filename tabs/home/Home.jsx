@@ -16,7 +16,7 @@ export default function Home() {
         <title>Kasar</title>
         <meta
           name="description"
-          content="Site de l'association KASAR, ECE Paris, orienté événementiel sur le thème de l'IA."
+          content="Site de l&#39;association KASAR, ECE Paris, orienté événementiel sur le thème de l&#39;IA."
         />
         <link rel="icon" href="/favicon.ico" />
       </Head>

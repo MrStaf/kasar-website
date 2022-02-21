@@ -5,7 +5,6 @@ import Head from "next/head";
 import { Title } from "../../components/Title/";
 import { Card } from "../../components/Card/";
 
-
 export default function Association() {
   return (
     <>
@@ -91,7 +90,7 @@ export default function Association() {
         <div className="w-full max-w-5xl px-8">
           <Title>présentation du bureau</Title>
           <div className="grid grid-cols-1 gap-8 sm:grid-cols-2">
-            <Card passHref={true} title="Grégoire Pateyron" subtitle="Président" img="fb1b46ab-9b0d-441e-a63c-6178e60a0dd3.jpeg" />
+            <Card passHref={true} title="Grégoire Pateyron" subtitle="Président" img="b1f1da7f-fc7b-4047-8bc9-e53e03da266c.jpeg" />
             <div className="w-full text-justify">
               Je m’appelle Grégoire Pateyron, j’ai 20 ans, je suis originaire de Paris et je me présente à vous en tant que président de cette association qui a commencé à se développer l’année dernière. J’habite proche de l’ECE, ce qui peut être un atout
               pour parler avec les étudiants et développer une association. Actuellement en première année du cycle ingénieur à l’ECE Paris, je n’ai donc pas pu voir de quoi les associations étaient capables et je n’ai pu participer qu’à très peu
@@ -103,7 +102,7 @@ export default function Association() {
               l’intelligence artificielle était présente tout autour de nous, ce que je n’imaginais pas avant.
             </div>
 
-            <Card passHref={true} title="Benoît Fage" subtitle="Vice-Président" className="flex w-full sm:hidden" img="75a78db7-a21c-4fe3-b465-3fc20fe53a82.jpeg" />
+            <Card passHref={true} title="Benoît Fage" subtitle="Vice-Président" className="flex w-full sm:hidden" img="e5fc9b8c-85fc-490f-8b47-fc54dd147204.jpeg" />
             <div className="w-full text-justify">
               Je m’appelle Benoît Fage, j’ai 21 ans et suis actuellement en ING3 nouveaux. J’aime créer toute sorte de projet, autant virtuel (applications, sites web, scripts etc.) que matériel (bricolage, objets connectés etc.). Cette soif de curiosité
               envers le fonctionnement des objets technologiques et virtuels me permet de comprendre la manière dont ils sont créés, et pourquoi.
@@ -117,9 +116,9 @@ export default function Association() {
               être présentées par la suite.
             </div>
             <div className="flex items-start justify-center">
-              <Card passHref={true} title="Benoît Fage" subtitle="Vice-Président" className="hidden sm:flex" img="75a78db7-a21c-4fe3-b465-3fc20fe53a82.jpeg" />
+              <Card passHref={true} title="Benoît Fage" subtitle="Vice-Président" className="hidden sm:flex" img="e5fc9b8c-85fc-490f-8b47-fc54dd147204.jpeg" />
             </div>
-            <Card passHref={true} title="Raphaël Grobon" subtitle="VP Trésorier" img="eb13ca46-1da7-4e8e-8e04-549590b6e8ea.jpeg" />
+            <Card passHref={true} title="Raphaël Grobon" subtitle="VP Trésorier" img="ffa50ae5-676c-4977-a753-b6e551e3350c.jpeg" />
             <div className="w-full text-justify">
               Je m’appelle Grégoire Pateyron, j’ai 20 ans, je suis originaire de Paris et je me présente à vous en tant que président de cette association qui a commencé à se développer l’année dernière. J’habite proche de l’ECE, ce qui peut être un atout
               pour parler avec les étudiants et développer une association. Actuellement en première année du cycle ingénieur à l’ECE Paris, je n’ai donc pas pu voir de quoi les associations étaient capables et je n’ai pu participer qu’à très peu
@@ -133,22 +132,22 @@ export default function Association() {
           </div>
           <div className="grid grid-cols-1 gap-4 mt-4 sm:grid-cols-2 xl:grid-cols-3">
             <div className="flex items-start justify-center">
-              <Card passHref={true} title="Thibault Peeters" subtitle="VP Logistique" img="1a260365-cd4d-476c-8534-54c09113227f.jpeg" pathname="https://instagram.com" />
+              <Card passHref={true} title="Thibault Peeters" subtitle="VP Logistique" img="e5e35bc7-aabc-476d-996e-f85f9e9e14ad.jpeg" pathname="https://instagram.com" />
             </div>
             <div className="flex items-start justify-center">
-              <Card passHref={true} title="Paul Feder" subtitle="VP Event" img="1e0c16f4-85da-465b-bd04-e2e2ff270f9e.jpeg" />
+              <Card passHref={true} title="Paul Feder" subtitle="VP Event" img="bc37fa0d-dde7-4fb1-bf5e-04063b086a0d.jpeg" />
             </div>
             <div className="flex items-start justify-center">
-              <Card passHref={true} title="Côme Chappuis" subtitle="VP Hack" img="65d8dabd-46df-4755-8420-4b4b794dfade.jpeg" />
+              <Card passHref={true} title="Côme Chappuis" subtitle="VP Hack" img="b1f3e616-4509-4474-acff-d01c1f507135.jpeg" />
             </div>
             <div className="flex items-start justify-center">
-              <Card passHref={true} title="Emeric Dussart" subtitle="Relations Communautaires" img="7cd470df-9711-4a27-8a44-473b706cfd02.png" />
+              <Card passHref={true} title="Emeric Dussart" subtitle="Relations Communautaires" img="c3b22e0f-9c1c-46a5-9107-96a484462a83.png" />
             </div>
             <div className="flex items-start justify-center">
-              <Card passHref={true} title="Thibaut d'Astorg" subtitle="Graphiste" img="950bedaf-ba57-43d9-b5a7-412cd8158c3b.jpeg" />
+              <Card passHref={true} title="Thibaut d'Astorg" subtitle="Graphiste" img="7f97a12b-1784-47d6-9a4b-f1d882c09bd5.jpeg" />
             </div>
             <div className="flex items-start justify-center">
-              <Card passHref={true} title="Malo Le Berre" subtitle="VP Partenariat" img="8e31318f-bc3d-45d8-87d0-118900b7be22.jpeg" />
+              <Card passHref={true} title="Malo Le Berre" subtitle="VP Partenariat" img="bba8c56f-c047-4d82-a5a1-f16eeefe0186.jpeg" />
             </div>
           </div>
         </div>

@@ -12,7 +12,7 @@ export default function Podcast({ podcasts, active, setActive }) {
       </Head>
       <main className="flex flex-col items-center flex-grow font-body">
         <Section>
-          {podcasts?.items.reverse().map((itm) => {
+          {podcasts?.items?.reverse().map((itm) => {
             return <Line key={itm?.guid} id={itm?.guid} title={itm?.title} ep={`S${itm?.season} E${itm?.episode}`} img={itm?.itunes?.image} active={active} setActive={setActive} />;
           })}
           <p className="w-full text-6xl text-center text-white animate-pulse">...</p>

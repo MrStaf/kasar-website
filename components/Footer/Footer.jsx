@@ -38,8 +38,10 @@ export default function Footer({ podcasts, active, setActive }) {
   useEffect(() => {
     // console.log(active);
     if (active === undefined) {
-      setItem([podcasts?.items[podcasts?.items?.length - 1]]);
-      sourceRef.current.src = podcasts?.items[podcasts?.items?.length - 1].enclosure.url;
+      if (podcasts?.items?.length > 0) {
+        setItem([podcasts?.items[podcasts?.items?.length - 1]]);
+        sourceRef.current.src = podcasts?.items[podcasts?.items?.length - 1].enclosure.url;
+      }
     } else {
       setItem(
         podcasts.items.filter((itm, index) => {
@@ -63,7 +65,7 @@ export default function Footer({ podcasts, active, setActive }) {
         audioPlayer.current.load();
       }
     }
-  // eslint-disable-next-line react-hooks/exhaustive-deps
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active, isPlaying, podcasts?.items]);
 
   useEffect(() => {
