@@ -19,7 +19,7 @@ export default function Events({ events_list }) {
               }
             })}
           </div>
-          <Title>BARMAN</Title>
+          <Title>CTF</Title>
           <div className="flex flex-wrap items-center justify-start gap-10">
             {events_list.map((value) => {
               if (value?.theme === "1") {
