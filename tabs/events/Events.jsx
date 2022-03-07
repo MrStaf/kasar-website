@@ -3,7 +3,6 @@ import { Card } from "./../../components/Card/index";
 import Head from "next/head";
 
 export default function Events({ events_list }) {
-  // console.log(events_list);
   return (
     <>
       <Head>
