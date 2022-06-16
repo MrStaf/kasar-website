@@ -1,0 +1,47 @@
+[
+	{
+		"id": 1,
+		"sort": 1,
+		"title": "Computer Vision, Kasar x ECE Shooting Club",
+		"date": "2021-11-16",
+		"description": "<p>Le voil&agrave; enfin, le premier &eacute;v&egrave;nement de l'ann&eacute;e ! En collaboration avec ECE Shooting club, l'event se basait sur la d&eacute;tection automatique de personnes en mouvement. L'event qui a dur&eacute; pr&egrave;s de 3h, accompagn&eacute; de boonbons et boissons, de bonne humeur et de comp&eacute;tition, s'est sold&eacute; par la victoire de deux jeunes ING3. Bravo &agrave; eux ! Kasarement v&ocirc;tre</p>",
+		"image": "042647b7-9419-4117-8728-0a69c99a5cad",
+		"theme": "0"
+	},
+	{
+		"id": 2,
+		"sort": 2,
+		"title": "CTF Number 1 : winner Quentin_SRN0 !",
+		"date": "2021-11-10",
+		"description": "<p>Premier CTF de l'ann&eacute;e, simple pour se lancer et r&eacute;solu avec brio par Quentin en seulement quelques jours... Bravo &agrave; lui et &agrave; tous ceux qui ont cherch&eacute;, le prochain sera plus compliqu&eacute; ! Kasarement votre</p>",
+		"image": "98b5a321-e7bc-44dc-b773-f45464d30322",
+		"theme": "1"
+	},
+	{
+		"id": 3,
+		"sort": 3,
+		"title": "CTF Number 2 : no winner",
+		"date": "2022-01-26",
+		"description": "<p>Deuxi&egrave;me hackathon de l'ann&eacute;e. Celui-ci est bien plus compliqu&eacute; que le pr&eacute;c&eacute;dent... Recherches, indices et d&eacute;votion des participants a &eacute;t&eacute; de mise, et malgr&eacute; tout, aucun vainqueur ! Le niveau de difficult&eacute; &eacute;tait trop &eacute;lev&eacute; ? Peut-&ecirc;tre... Mais nous ne manquerons pas de faire en sorte de former ces jeunes kasariens pour qu'ils r&eacute;ussissent la prochaine &eacute;preuve ! Kasarement v&ocirc;tre</p>",
+		"image": "6d1cdd19-871d-432d-8683-e1ca6c866a7c",
+		"theme": "1"
+	},
+	{
+		"id": 4,
+		"sort": 5,
+		"title": "Expérience culinaire, Kasar x ECE Cook",
+		"date": "2022-01-27",
+		"description": "<p>De retour pour de nouvelles aventures ! Apr&egrave;s quelques mois sans activit&eacute;s &agrave; cause des partiels, et des vacances, Kasar est de retour pour un nouvelle event, bas&eacute; sur une exp&eacute;rience culinaire. En partenariat avec CE Cook (et nous avons eu le bonheur de d&eacute;guster leurs petites oeuvres d'art), les participants devaient cr&eacute;et une IA capable de reconna&icirc;tre les patisseries entre diff&eacute;rents choix... A vos manches...Pr&ecirc;t... Partez !</p>",
+		"image": "c624d2f5-b47c-4ef1-932d-707b50dd1769",
+		"theme": "0"
+	},
+	{
+		"id": 5,
+		"sort": 4,
+		"title": "Coupe d'IA des Assos",
+		"date": "2022-03-24",
+		"description": "<p>&Agrave; venir... See you soon pour le plus gros event Kasar de l'ann&eacute;e ! Pour sa r&eacute;&eacute;dition, kasar vous propose de participer &agrave; la coupe d'IA des assos, qui correspond &agrave; une sorte de tournoi fifa automatique ; les &eacute;quipes de 2 &eacute;l&egrave;ves devront entrainer leurs &eacute;quipes de foot respectives (chacune repr&eacute;sentant une asso), cr&eacute;er leurs maillots, et leur logo. Le jour J venu, les phases de poules et &eacute;liminatoires sont lanc&eacute;es... Pr&eacute;parez vous &agrave; enflammer la piste et soulever le \"Ballon d'or des IA\". Kasarement v&ocirc;tre</p>",
+		"image": "7568e4fc-316c-4a7a-af37-4a6ed3e0c8a0",
+		"theme": "2"
+	}
+]
